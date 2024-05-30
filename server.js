@@ -26,6 +26,25 @@ app.get('/api/images', (req, res) => {
   });
 });
 
+const recipesFilePath = path.join(__dirname, 'angular-dietCooking', 'src', 'assets', 'db_recipes.json.json');
+
+app.get('/api/recipes', (req, res) => {
+  fs.readFile(recipesFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading recipes file:', err);
+      return res.status(500).json({ error: 'Error reading recipes file' });
+    }
+
+    try {
+      const recipes = JSON.parse(data);
+      res.json(recipes);
+    } catch (error) {
+      console.error('Error parsing recipes JSON:', error);
+      res.status(500).json({ error: 'Error parsing recipes JSON' });
+    }
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
