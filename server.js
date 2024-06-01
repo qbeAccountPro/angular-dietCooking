@@ -26,7 +26,7 @@ app.get('/api/images', (req, res) => {
   });
 });
 
-const recipesFilePath = path.join(__dirname, 'angular-dietCooking', 'src', 'assets', 'db_recipes.json.json');
+const recipesFilePath = path.join(__dirname, 'angular-dietCooking', 'src', 'assets', 'db_recipes.json');
 
 app.get('/api/recipes', (req, res) => {
   fs.readFile(recipesFilePath, 'utf8', (err, data) => {
