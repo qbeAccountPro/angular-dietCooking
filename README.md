@@ -22,16 +22,17 @@ npm i -g @angular/cli
 ## Start Server
 
 ### 1. Run the Development Server
-<!-- At this location [awesome-components](awesome-components) run : -->
+
+At this location [angular-dietCooking](angular-dietCooking) run :
 ```
 ng serve 
 ```
 
 ### 2. Run the Data Server : 
-<!-- At this location [angular-advanced-backend-master](angular-advanced-backend-master) run : -->
 
+Come back at the root directory and run :
 ```
-npm run start
+node server.js
 ```
 
 Navigate to http://localhost:4200/ in your browser to view the application with all this features.
